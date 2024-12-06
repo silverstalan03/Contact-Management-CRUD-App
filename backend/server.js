@@ -9,7 +9,8 @@ app.use(express.json());
 mongoose.connect('mongodb://mongodb:27017/contacts', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}).then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 const Contact = mongoose.model('Contact', {
   id: String,
