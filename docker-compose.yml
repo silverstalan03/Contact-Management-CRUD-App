@@ -1,5 +1,14 @@
 version: '3'
 services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
   frontend:
     build:
       context: ./frontend
@@ -17,11 +26,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5002:5002"
-    env_file:
-      - .env
+    depends_on:
+      - mongodb
     networks:
       - app-network
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mongodb_data:
