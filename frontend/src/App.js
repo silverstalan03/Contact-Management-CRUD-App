@@ -163,7 +163,7 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Contact Management System</h1>
+      <h1 style={styles.header}>Contact Management</h1>
 
       {error && (
         <div style={{
