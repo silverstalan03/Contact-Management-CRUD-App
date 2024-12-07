@@ -163,12 +163,12 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Contact Management</h1>
+      <h1 style={styles.header}>Contact Management Application</h1>
 
       {error && (
         <div style={{
           padding: '10px',
-          backgroundColor: '#ffebee',
+          backgroundColor: 'blue',
           color: '#c62828',
           borderRadius: '8px',
           marginBottom: '20px'
